@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Push the content down by header’s height */
+main, section {
+  padding-top: 50px;
+}
+
+p {
+  text-align: left;   /* Best for readability */
+  line-height: 1.6;   /* Improves spacing between lines */
+  margin-bottom: 15px;
+  font-size: large;
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;   /* centers the block on screen */
+  padding: 20px;
+}
+
+/* Footer CSS - add to trying.css (near bottom) */
+
+
+
+/* social icons */
+.social-icons{
+  display:flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+.si{
+  display:inline-grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  background: rgba(255,255,255,0.12);
+  border-radius:50%;
+  text-decoration:none;
+  transition: transform .18s ease, background .18s ease;
+}
+.si svg{ width:18px; height: 18px; fill: #0b63b6; opacity: .98; }
+.si:hover{ transform: translateY(-3px); background: rgba(255,255,255,0.2); }
+.social-icons a:hover svg {
+  fill: #fff;   /* solar yellow on hover */
+}
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;        /* makes it round */
+  background: #0b63b6;       /* solid brand blue */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons svg {
+  fill: #fff;                /* white inside the blue circle */
+  width: 18px;
+  height: 18px;
+}
+
+.social-icons a:hover {
+  background: #ffb400;       /* solar yellow on hover */
+  transform: translateY(-3px);
+}
+
+.social-icons a[aria-label="WhatsApp"]:hover {
+  background: #1EBE5D;   /* darker green on hover */
+}
+.social-icons a[aria-label="Facebook"]:hover {
+  background: #1877F2;   /* darker green on hover */
+}
+.social-icons a[aria-label="Twitter"]:hover {
+  background: #1DA1F2;   /* darker green on hover */
+}
+.social-icons a[aria-label="Instagram"]:hover {
+  background: #E1306C;   /* darker green on hover */
+}

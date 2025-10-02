@@ -1,0 +1,76 @@
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+}
+.navbar {
+    display: flex
+;
+    align-items: center;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .navbar {
+        display: flex
+;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    }
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex
+;
+    align-items: center;
+    padding: 12px 20px;
+    z-index: 1000;
+}
+.navbar {
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+body {
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+:host, :root {
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em / 1 "Font Awesome 6 Free";
+}
+:host, :root {
+    --fa-font-regular: normal 400 1em / 1 "Font Awesome 6 Free";
+}
+:host, :root {
+    --fa-style-family-brands: "Font Awesome 6 Brands";
+    --fa-font-brands: normal 400 1em / 1 "Font Awesome 6 Brands";
+}

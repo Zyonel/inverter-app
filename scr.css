@@ -1,0 +1,88 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  margin-right: auto;   /* logo stays on the left */
+}
+
+.nav-links {
+  flex: 1;              /* take remaining space */
+  display: flex;
+  justify-content: center; /* center the links */
+  gap: 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: fixed;  /* ✅ keeps navbar in place */
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* navy gradient */
+  z-index: 1000;   /* ensures it’s above all content */
+  padding: 15px 30px;
+}
+
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  /* Logo styling */
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    position: relative;   /* stays in normal flow */
+    margin-right: auto;   /* push links away */
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    backdrop-filter: blur(5px);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  }
+
+  .nav-links {
+    flex: 1;
+    display: flex;              /* flex so links line up */
+    justify-content: center;    /* center the HOME & ABOUT */
+    gap: 20px;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+
+
+
+
+
+
+
