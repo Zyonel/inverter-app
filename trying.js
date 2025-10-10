@@ -188,27 +188,26 @@ document.querySelectorAll(".stat-box h2").forEach(el => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // classes we want to animate on scroll:
+  // Select all elements you want animated
   const selector = ".fade-in, .slide-in-left, .slide-in-right, .zoom-in";
   const animEls = document.querySelectorAll(selector);
 
   const appearOptions = {
-    threshold: 0.2
+    threshold: 0.2 // Trigger when 20% is visible
   };
 
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  const appearOnScroll = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        // uncomment the next line if you want the animation to run only once:
-        observer.unobserve(entry.target);
       } else {
-        // If you want the animation to re-trigger when scrolling back up,
-        // remove the observer.unobserve(...) above and uncomment the lines below:
-        // entry.target.classList.remove("visible");
+        // Hide again when it's out of view so it can animate again later
+        entry.target.classList.remove("visible");
       }
     });
   }, appearOptions);
 
   animEls.forEach(el => appearOnScroll.observe(el));
 });
+
+

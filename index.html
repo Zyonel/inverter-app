@@ -26,6 +26,11 @@
     <h3>The Future is Bright, The Future is Solar</h3>
     <p>Harness the sun’s energy with our inverters and solar solutions designed for efficiency and durability.</p>
     </div>
+   <!-- <div class="hero-gallery">
+  <img src="images/inverter1.jpg"  alt="Solar panel installation">
+  <img src="images/inverter2.jpg" alt="Solar inverter">
+  </div> -->
+
     <div class="stats fade-in">
   <div class="stat-box">
     <h2>120+</h2>
@@ -75,6 +80,7 @@
    
     </div>
     </section>
+
 <section class="benefits">
   <div class="benefits-content slide-in-right">
     
@@ -97,8 +103,10 @@
   </div>
 -->
    <div class="benefits-media slide-in-left">
-    <img src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-6/487546728_957272156393605_4940167296961045758_n.jpg?stp=c0.79.720.720a_dst-jpg_s206x206_tt6&_nc_cat=100&ccb=1-7&_nc_sid=714c7a&_nc_ohc=QOEr9ZlpoF0Q7kNvwGeJWtD&_nc_oc=AdkWHefKcDw64LxWuKy_990S470VYLwspYarHf846L1RQnlTrF0MQYDLro-CkNIPIPw&_nc_zt=23&_nc_ht=scontent-los2-1.xx&_nc_gid=U2CRbGkKnZ36xOpTCaO5wA&oh=00_AfYh3m0NCVHlvcde-1iGr62YTtB9qdSh80zanTaSPsWQow&oe=68E03237" alt="Solar Panels">
-    <img src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-6/472720437_901264418661046_8846147607910872767_n.jpg?stp=c0.79.720.720a_dst-jpg_s206x206_tt6&_nc_cat=101&ccb=1-7&_nc_sid=714c7a&_nc_ohc=zBS_sxnklVsQ7kNvwF3yAGx&_nc_oc=AdkccZl-tPkgXXJiBgXmUFSbKyA6aSYLcvC9yesXLvh7qjDFAzxmDd7y75TuS1GCYvg&_nc_zt=23&_nc_ht=scontent-los2-1.xx&_nc_gid=btieYXWX1hx7WBw1pl3wgw&oh=00_AfYFgfSfXTPV57I6hzPVDfekwwhWk3TrTxliiWjJAKdmxQ&oe=68E036DA" alt="Solar Installation">
+    <img src="images/inverter1.jpg" alt="Solar Panels">
+    
+    <img src="images/inverter2.jpg" alt="Solar Installation">
+  
   </div> 
    <div class="get zoom-in"><a href="product.html" class="btn">GET PRODUCT</a>
    </div>

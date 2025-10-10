@@ -768,6 +768,7 @@ header {
       color: black;
       padding: 20px;
       border-radius: 10px;
+      min-height: 200px;
       width: 250px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       text-align: center;
@@ -937,4 +938,3 @@ header {
   opacity: 1;
   transform: scale(1);
 }
-
