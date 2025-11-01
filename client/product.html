@@ -26,7 +26,7 @@
 
     .order-form h2 {
       text-align: center;
-      color: #0b63b6; /* Solar blue */
+      color: #0b63b6;
       margin-bottom: 20px;
     }
 
@@ -70,7 +70,7 @@
     }
 
     button:hover {
-      background: #ffb400; /* Solar yellow on hover */
+      background: #ffb400;
       color: #000;
     }
 
@@ -79,14 +79,14 @@
     }
 
     .buttons {
-        display: flex;
-        gap: 10px;
+      display: flex;
+      gap: 10px;
     }
   </style>
 </head>
 <body>
 
-  <form class="order-form" action="order.php" method="POST">
+  <form class="order-form" id="orderForm">
     <h2>Place Your Solar Order</h2>
 
     <label>Full Name <span class="required">*</span></label>
@@ -122,11 +122,37 @@
 
     <label>Additional Notes</label>
     <textarea name="notes"></textarea>
-<div class="buttons">
-    <button type="submit">Submit Order</button>
-    <button type="button" onclick="history.back()">Back</button>
+
+    <div class="buttons">
+      <button type="submit">Submit Order</button>
+      <button type="button" onclick="history.back()">Back</button>
     </div>
   </form>
+
+  <script defer>
+    document.getElementById('orderForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const res = await fetch('/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (!res.ok) throw new Error('Server error');
+        const result = await res.json();
+
+        alert(result.message);
+        e.target.reset();
+      } catch (err) {
+        console.error('Order submission failed:', err);
+        alert('Failed to send order. Please try again.');
+      }
+    });
+  </script>
 
 </body>
 </html>

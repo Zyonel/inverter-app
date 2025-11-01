@@ -10,12 +10,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Static files for main site
+app.use(express.static(path.join(__dirname)));
 
-// Serve static files (your HTML, CSS, JS)
-app.use(express.static(__dirname));
+// File to store data
+const DATA_FILE = path.join(__dirname, 'data.json');
 
-const DATA_FILE = 'data.json';
+// --- ROUTES --- //
 
+// Handle form submissions
 app.post('/submit', (req, res) => {
   const newOrder = req.body;
   let data = [];
@@ -43,6 +46,7 @@ app.post('/submit', (req, res) => {
   }
 });
 
+// Fetch all orders (for admin page)
 app.get('/orders', (req, res) => {
   try {
     if (fs.existsSync(DATA_FILE)) {
@@ -58,4 +62,11 @@ app.get('/orders', (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+// Serve admin page at /admin
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'admin.html'));
+});
+
+// --- START SERVER ---
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
