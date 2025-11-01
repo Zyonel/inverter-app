@@ -69,6 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
   animEls.forEach(el => appearOnScroll.observe(el));
 });
 
+const slides = document.querySelectorAll('.image-slider .slide');
+let current = 0;
+
+function changeSlide() {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}
+
+setInterval(changeSlide, 30000); // 30 seconds
+
 // --- FORM SUBMISSION LOGIC ---
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");

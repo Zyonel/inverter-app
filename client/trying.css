@@ -938,3 +938,94 @@ header {
   opacity: 1;
   transform: scale(1);
 }
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.image-slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.image-slider img.active {
+  opacity: 1;
+}
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;       /* limits how wide it gets on large screens */
+  height: 400px;
+  margin: 40px auto;       /* centers it horizontally */
+  border-radius: 15px;     /* smooth edges */
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.image-slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 15px;
+}
+
+.image-slider img.active {
+  opacity: 1;
+}
+
+.image-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s;
+  z-index: 2;
+}
+
+.image-slider button:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.image-slider .prev { left: 15px; }
+.image-slider .next { right: 15px; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-slider {
+    height: 300px;
+    max-width: 95%;
+  }
+
+  .image-slider button {
+    font-size: 22px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-slider {
+    height: 220px;
+  }
+
+  .image-slider button {
+    font-size: 18px;
+    padding: 6px;
+  }
+}
