@@ -129,30 +129,31 @@
     </div>
   </form>
 
-  <script defer>
-    document.getElementById('orderForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      const data = Object.fromEntries(formData.entries());
+<script defer>
+  document.getElementById('orderForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
 
-      try {
-        const res = await fetch('/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
+    try {
+      const res = await fetch('https://inverter-app.onrender.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
 
-        if (!res.ok) throw new Error('Server error');
-        const result = await res.json();
+      if (!res.ok) throw new Error('Server error');
+      const result = await res.json();
 
-        alert(result.message);
-        e.target.reset();
-      } catch (err) {
-        console.error('Order submission failed:', err);
-        alert('Failed to send order. Please try again.');
-      }
-    });
-  </script>
+      alert(result.message);
+      e.target.reset();
+    } catch (err) {
+      console.error('Order submission failed:', err);
+      alert('Failed to send order. Please try again.');
+    }
+  });
+</script>
+
 
 </body>
 </html>

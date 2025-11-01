@@ -23,13 +23,13 @@
     <tbody></tbody>
   </table>
 
-  <script>
+<script>
 async function loadOrders() {
   const tbody = document.querySelector('#ordersTable tbody');
   tbody.innerHTML = "<tr><td colspan='9'>Loading orders...</td></tr>";
 
   try {
-    const res = await fetch('/orders'); // auto-works locally or on Render
+    const res = await fetch('https://inverter-app.onrender.com/orders');
     if (!res.ok) throw new Error('Failed to fetch orders');
 
     const orders = await res.json();
@@ -66,6 +66,7 @@ if (refreshBtn) {
   refreshBtn.addEventListener('click', loadOrders);
 }
 </script>
+
 
 </body>
 </html>
